@@ -4,7 +4,7 @@ import { useMemo } from 'react'
  * ToolsMarquee
  *
  * Horizontally scrolling strip of brand logos + labels for the tools you work with.
- * PLACEHOLDER - swap the list below for your own tools (icons live in public/icons/).
+ * Tools and technologies I build with (icons live in public/icons/).
  * The strip lives on the cream shader page, NOT inside a dark section.
  *
  * Implementation notes:
@@ -38,17 +38,25 @@ type Tool = {
 }
 
 export const tools: Tool[] = [
-  { name: 'Claude Code',          iconPath: '/icons/claude-code-logo.png' },
-  { name: 'Codex',                iconPath: '/icons/codex.svg',           color: '#000000' },
-  { name: 'Cursor',               iconPath: '/icons/cursor.svg',          color: '#0F172A' },
-  { name: 'Hermes AI',            iconPath: '/icons/nousresearch.svg',    color: '#18181B' },
-  { name: 'VS Code',              iconPath: '/icons/vscode.svg' },
-  { name: 'GoHighLevel',          iconPath: '/icons/gohighlevel.png' },
-  { name: 'Lightspeed X-Series',  iconPath: '/icons/lightspeed.png' },
-  { name: 'Google Workspace',     iconPath: '/icons/googleworkspace.svg' },
-  { name: 'Zendesk',              iconPath: '/icons/zendesk.svg',         color: '#03363D' },
-  { name: 'Intercom',             iconPath: '/icons/intercom.svg',        color: '#1F8DED' },
-  { name: 'Slack',                iconPath: '/icons/slack.svg',           color: '#611F69' },
+  { name: 'Next.js',         iconPath: '/icons/nextdotjs.svg',      color: '#000000' },
+  { name: 'React',           iconPath: '/icons/react.svg',          color: '#61DAFB' },
+  { name: 'TypeScript',      iconPath: '/icons/typescript.svg',     color: '#3178C6' },
+  { name: 'JavaScript',      iconPath: '/icons/javascript.svg',     color: '#F7DF1E' },
+  { name: 'Tailwind CSS',    iconPath: '/icons/tailwindcss.svg',    color: '#06B6D4' },
+  { name: 'Node.js',         iconPath: '/icons/nodedotjs.svg',      color: '#5FA04E' },
+  { name: 'PostgreSQL',      iconPath: '/icons/postgresql.svg',     color: '#4169E1' },
+  { name: 'Supabase',        iconPath: '/icons/supabase.svg',       color: '#3FCF8E' },
+  { name: 'Redis',           iconPath: '/icons/redis.svg',          color: '#FF4438' },
+  { name: 'GraphQL',         iconPath: '/icons/graphql.svg',        color: '#E10098' },
+  { name: 'Firebase',        iconPath: '/icons/firebase.svg',       color: '#DD2C00' },
+  { name: 'Flutter',         iconPath: '/icons/flutter.svg',        color: '#02569B' },
+  { name: 'GitHub Actions',  iconPath: '/icons/githubactions.svg',  color: '#2088FF' },
+  { name: 'Git',             iconPath: '/icons/git.svg',            color: '#F05032' },
+  { name: 'GitHub',          iconPath: '/icons/github.svg',         color: '#181717' },
+  { name: 'Vercel',          iconPath: '/icons/vercel.svg',         color: '#000000' },
+  { name: 'Postman',         iconPath: '/icons/postman.svg',        color: '#FF6C37' },
+  { name: 'Jira',            iconPath: '/icons/jira.svg',           color: '#0052CC' },
+  { name: 'VS Code',         iconPath: '/icons/vscode.svg' },
 ]
 
 export default function ToolsMarquee() {
