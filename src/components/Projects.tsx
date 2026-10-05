@@ -77,10 +77,14 @@ function ExtensionCard({ ext }: { ext: Extension }) {
 /* ── App card ───────────────────────────────────────────────── */
 function AppCard({ app }: { app: AppProject }) {
   return (
-    <li
-      className="app-card"
-      style={{ ['--app-color' as string]: app.accentColor }}
-    >
+    <li>
+      <a
+        className="app-card"
+        href={app.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ ['--app-color' as string]: app.accentColor }}
+      >
       <div className="app-card__img-wrap">
         {app.imageSrc ? (
           <img
@@ -113,6 +117,7 @@ function AppCard({ app }: { app: AppProject }) {
           ))}
         </ul>
       </div>
+      </a>
     </li>
   )
 }

@@ -4,6 +4,7 @@ export type AppProject = {
   name: string
   tagline: string
   description: string
+  url: string
   /** Optional - omit for gradient placeholder cards */
   imageSrc?: string
   /** CSS object-position override. Defaults to 'top center'. */
@@ -25,8 +26,10 @@ export const mobileApps: MobileApp[] = [
   {
     name: 'Pandayo Coffee',
     tagline: 'POS and inventory system for a coffee shop.',
+    url: 'https://pandayo-coffee.vercel.app/',
     description:
       'Owners, cashiers and staff sign in and see only what their role allows. Covers login, the POS screen, stock tracking and an admin dashboard. Built with Next.js, TypeScript, Tailwind CSS and Supabase.',
+    imageSrc: '/placeholders/pandayo-coffee.jpg',
     accentColor: '#0A0A0A',
     stats: [
       { value: '3', label: 'User roles' },
@@ -38,8 +41,10 @@ export const mobileApps: MobileApp[] = [
   {
     name: 'RCV System',
     tagline: 'Regulatory Compliance Verification System.',
+    url: 'https://rcv-steel.vercel.app/',
     description:
       'My thesis project for the Bureau of Animal Industry. It helps verify regulatory compliance in one place. The frontend is deployed on Vercel.',
+    imageSrc: '/placeholders/rcv-system.jpg',
     accentColor: '#555555',
     stats: [
       { value: 'Thesis', label: 'Project type' },
@@ -47,6 +52,21 @@ export const mobileApps: MobileApp[] = [
       { value: 'Vercel', label: 'Frontend host' },
     ],
     badge: 'Thesis',
+  },
+  {
+    name: 'Circuit Cube',
+    tagline: 'Interactive digital logic learning platform.',
+    url: 'https://circuitcube.netlify.app/',
+    description:
+      'A Software Engineering project for learning digital logic through interactive circuit building, real-time simulation, and guided practice.',
+    imageSrc: '/placeholders/circuit-cube.jpg',
+    accentColor: '#0F766E',
+    stats: [
+      { value: '3D', label: 'Circuit simulation' },
+      { value: '50+', label: 'Templates' },
+      { value: 'Learning', label: 'Platform' },
+    ],
+    badge: 'Software Engineering',
   },
 ]
 
