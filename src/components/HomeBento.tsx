@@ -1,4 +1,3 @@
-import type React from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowUpRight,
@@ -6,13 +5,6 @@ import {
   User,
   Robot,
   Medal,
-  Stack,
-  Quotes,
-  FunnelSimple,
-  Gear,
-  AddressBook,
-  Globe,
-  AppWindow,
   SealCheck,
 } from '@/components/slab'
 import { gymFunnel, bookingFunnel, websiteFunnel, type Funnel } from '@/data/funnels'
@@ -33,20 +25,6 @@ const thumbSrc = (f: Funnel) =>
   `/home/${f.dir ?? 'funnels'}-${f.file.replace('.html', '.jpeg')}`
 
 const PROJECT_SHOTS = [gymFunnel[0], bookingFunnel[0], websiteFunnel[0], gymFunnel[1]].filter(Boolean)
-
-const OFFERS = [
-  { Icon: FunnelSimple, title: 'Service One', note: 'PLACEHOLDER one-liner' },
-  { Icon: Gear, title: 'Service Two', note: 'PLACEHOLDER one-liner' },
-  { Icon: AddressBook, title: 'Service Three', note: 'PLACEHOLDER one-liner' },
-  { Icon: Globe, title: 'Service Four', note: 'PLACEHOLDER one-liner' },
-  { Icon: AppWindow, title: 'Service Five', note: 'PLACEHOLDER one-liner' },
-] as const
-
-const CLIENTS = [
-  { name: 'Client Name 1', role: 'PLACEHOLDER - your role for them', work: 'Tag · Tag · Tag', logo: '/placeholders/logo.svg' },
-  { name: 'Client Name 2', role: 'PLACEHOLDER - your role for them', work: 'Tag · Tag · Tag', logo: '/placeholders/logo.svg' },
-  { name: 'Client Name 3', role: 'PLACEHOLDER - your role for them', work: 'Tag · Tag · Tag' },
-]
 
 // Three photos of you, fanned. Small copies are fine - the fan shows them under 100px.
 const PHOTOS = [profile.avatarSrc, '/avatar.svg?2', '/avatar.svg?3']
@@ -145,49 +123,6 @@ export default function HomeBento() {
         </div>
       </Link>
 
-      {/* Services: the five offers as a compact index. */}
-      <Link to="/services" className="bento__card bento__card--services">
-        <CardHead Icon={Stack} title="Services" desc="PLACEHOLDER - what you offer, and to whom." />
-        <ul className="bento__media bento__offers" role="list">
-          {OFFERS.map(({ Icon, title, note }, i) => (
-            <li key={title} className="bento__offer" style={{ '--i': i } as React.CSSProperties}>
-              <span className="bento__offer-tile">
-                <Icon size={15} weight="duotone" aria-hidden="true" />
-              </span>
-              <span className="bento__offer-text">
-                <span className="bento__offer-title">{title}</span>
-                <span className="bento__offer-note">{note}</span>
-              </span>
-              <span className="bento__offer-num" aria-hidden="true">
-                0{i + 1}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </Link>
-
-      {/* Testimonials: client cards drifting up a clipped column. */}
-      <Link to="/testimonials" className="bento__card bento__card--quotes">
-        <CardHead Icon={Quotes} title="Testimonials" desc="PLACEHOLDER - one line on your clients." />
-        <div className="bento__media bento__reviews" aria-hidden="true">
-          <div className="bento__reviews-track">
-            {[...CLIENTS, ...CLIENTS].map((c, i) => (
-              <span key={i} className="bento__review">
-                <span className="bento__review-top">
-                  {c.logo ? (
-                    <img src={c.logo} alt="" width={18} height={18} />
-                  ) : (
-                    <Quotes size={14} weight="fill" />
-                  )}
-                  <b>{c.name}</b>
-                </span>
-                <span className="bento__review-role">{c.role}</span>
-                <span className="bento__review-work">{c.work}</span>
-              </span>
-            ))}
-          </div>
-        </div>
-      </Link>
     </nav>
   )
 }

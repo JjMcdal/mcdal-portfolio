@@ -1,12 +1,11 @@
 import { useCallback, useEffect, useLayoutEffect, useRef } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
-import { House, FolderOpen, EnvelopeSimple, Stack, User } from '@/components/slab'
+import { House, FolderOpen, EnvelopeSimple, User } from '@/components/slab'
 import { motionReduced } from '@/lib/a11y'
 
 /**
  * The phone navigation: a bottom tab bar with Contact as the raised action
- * in the middle. Five slots for seven routes - Showcase and Testimonials
- * are reached from Home's explore row and from the pages that cite them.
+ * in the middle.
  *
  * One pill marks the current tab and travels to the next one, stretching
  * toward it and settling (Liquid Glass). It skips Contact - the raised button
@@ -21,7 +20,6 @@ const TABS = [
   { label: 'Home', to: '/', Icon: House },
   { label: 'Work', to: '/projects', Icon: FolderOpen },
   { label: 'Contact', to: '/contact', Icon: EnvelopeSimple, primary: true },
-  { label: 'Services', to: '/services', Icon: Stack },
   { label: 'About', to: '/about', Icon: User },
 ] as const
 
