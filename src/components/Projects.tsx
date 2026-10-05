@@ -15,17 +15,17 @@ type Extension = {
 
 const EXTENSIONS: Extension[] = [
   {
-    name: 'Extension Name One',
-    desc: 'PLACEHOLDER - tell me what to put here: what the extension does and who uses it.',
+    name: 'QA Helper',
+    desc: 'A small browser tool for keeping test notes and repeatable checks close to the work.',
     imageSrc: '/placeholders/extension-1.jpg',
-    imageAlt: 'Extension one popup placeholder',
+    imageAlt: 'QA Helper extension popup',
     Icon: Key,
   },
   {
-    name: 'Extension Name Two',
-    desc: 'PLACEHOLDER - tell me what to put here: what the extension does and who uses it.',
+    name: 'Workflow Capture',
+    desc: 'A browser companion for capturing useful page details while researching a workflow.',
     imageSrc: '/placeholders/extension-2.jpg',
-    imageAlt: 'Extension two popup placeholder',
+    imageAlt: 'Workflow Capture extension popup',
     Icon: Browser,
   },
 ]
@@ -130,12 +130,12 @@ export function AIStackSection() {
       data-reveal
     >
       <header className="projects__header">
-        <span className="projects__eyebrow">Placeholder category</span>
+          <span className="projects__eyebrow">Systems and experiments</span>
         <h2 className="projects__headline" id="projects-heading">
           Your systems headline.
         </h2>
         <p className="projects__subhead">
-          PLACEHOLDER - tell me what to put here: one line on the systems below.
+          A growing set of practical systems, experiments, and tools built with a tester's eye.
           Open a branch to see what sits under it.
         </p>
       </header>
@@ -150,7 +150,7 @@ export function AppsSection() {
   return (
     <section className="projects projects--apps" aria-label="Apps and extensions" data-reveal>
       <div className="projects__panel">
-        <span className="projects__ext-eyebrow">Your apps label</span>
+        <span className="projects__ext-eyebrow">Apps I have built</span>
         <ul className="projects__apps" role="list">
           {mobileApps.map((app) => (
             <AppCard key={app.name} app={app} />
@@ -159,7 +159,7 @@ export function AppsSection() {
 
         {/* Browser extensions - a compact companion block in the same section */}
         <div className="projects__ext">
-          <span className="projects__ext-eyebrow">Your extensions label</span>
+          <span className="projects__ext-eyebrow">Browser experiments</span>
           <ul className="ext-grid" role="list">
             {EXTENSIONS.map((ext) => (
               <ExtensionCard key={ext.name} ext={ext} />

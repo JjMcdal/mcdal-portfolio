@@ -18,7 +18,7 @@ export default function ShowcaseGrid() {
             Your flagship product, and the people using it.
           </h1>
           <p className="pgrid__lede">
-            PLACEHOLDER - tell me what to put here: one line on what this product is and why a visitor should look at it.
+            A product-style case study showing how I think through interfaces, workflows, and quality.
           </p>
         </div>
 
@@ -29,12 +29,12 @@ export default function ShowcaseGrid() {
           <p className="ktools__vote-label">
             Featured on
             <span aria-hidden="true" className="ktools__vote-dot" />
-            <span className="ktools__vote-ask">Placeholder</span>
+            <span className="ktools__vote-ask">Portfolio build</span>
           </p>
           <a className="ktools__vote-frame ktools__vote-card" href="#">
             <img src="/placeholders/badge.svg" alt="" width="48" height="48" />
             <span className="ktools__vote-text">
-              PLACEHOLDER - a badge, award or launch link
+              Built as a working interface study
             </span>
           </a>
         </div>

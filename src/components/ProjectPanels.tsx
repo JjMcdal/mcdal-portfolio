@@ -92,9 +92,9 @@ export function PlanPanel() {
 type Build = { id: string; label: string; src: string; path: string; Icon: Icon }
 
 const BUILDS: Build[] = [
-  { id: 'ticketing', label: 'Featured Project One', src: '/placeholders/sample-plan.html?doc=1', path: '/featured-one', Icon: Ticket },
-  { id: 'framework', label: 'Featured Project Two', src: '/placeholders/sample-plan.html?doc=2', path: '/featured-two', Icon: Robot },
-  { id: 'workflow', label: 'Featured Project Three', src: '/placeholders/sample-plan.html?doc=3', path: '/featured-three', Icon: FlowArrow },
+  { id: 'ticketing', label: 'Pandayo Coffee', src: '/placeholders/sample-plan.html?doc=1', path: '/pandayo-coffee', Icon: Ticket },
+  { id: 'framework', label: 'RCV System', src: '/placeholders/sample-plan.html?doc=2', path: '/rcv-system', Icon: Robot },
+  { id: 'workflow', label: 'Workflow experiments', src: '/placeholders/sample-plan.html?doc=3', path: '/workflow-experiments', Icon: FlowArrow },
 ]
 
 /** One build, framed, open on arrival. */

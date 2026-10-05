@@ -22,20 +22,20 @@ export default function ToS() {
         </button>
 
         <h1 className="legal-page__title">Terms of Service</h1>
-        <p className="legal-page__updated">Last updated: PLACEHOLDER date</p>
+        <p className="legal-page__updated">Last updated: October 5, 2026</p>
 
         <div className="legal-page__body">
           <h2>Using this site</h2>
-          <p>PLACEHOLDER - tell me what to put here: the basic terms for visiting this site.</p>
+          <p>You may browse this portfolio for personal and professional evaluation. Please do not copy, scrape, or republish its content without permission.</p>
 
           <h2>Work and payment</h2>
-          <p>PLACEHOLDER - tell me what to put here: how projects are scoped, billed and delivered.</p>
+          <p>Any project discussed through this site is scoped, priced, and delivered through a separate written agreement.</p>
 
           <h2>Ownership</h2>
-          <p>PLACEHOLDER - tell me what to put here: who owns the work and the content on this site.</p>
+          <p>The portfolio content and visual work remain the property of their respective owners unless a project agreement says otherwise.</p>
 
           <h2>Liability</h2>
-          <p>PLACEHOLDER - tell me what to put here: your limits of liability.</p>
+          <p>This site is provided as-is. Project responsibilities and liability are defined in the agreement for that project.</p>
 
           <h2>Contact</h2>
           <p>

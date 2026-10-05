@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sample Document - Placeholder</title>
+<title>Project Notes - Workflow Study</title>
 <meta name="robots" content="noindex">
 <style>
   :root {
@@ -74,52 +74,52 @@
   <main class="doc">
     <span class="tag">
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 1.5h5.5L13 5v9.5H4z"/><path d="M9 1.5V5h4"/></svg>
-      <span id="doc-kind">Placeholder sample document</span>
+      <span id="doc-kind">Project notes</span>
     </span>
-    <h1 id="doc-title">Your document title goes here.</h1>
-    <p class="lede">PLACEHOLDER - tell me what to put here: a one-line summary of this plan or case study, who it was for, and the result.</p>
+    <h1 id="doc-title">From workflow to working product.</h1>
+    <p class="lede">A compact project note showing how a problem becomes a clearer flow, a tested build, and a useful handoff.</p>
 
     <div class="meta">
-      <div><span>Client</span><b>Client Name</b></div>
-      <div><span>Timeline</span><b>0 weeks</b></div>
-      <div><span>Outcome</span><b>Result metric</b></div>
+      <div><span>Focus</span><b>Product workflow</b></div>
+      <div><span>Approach</span><b>Build and test</b></div>
+      <div><span>Outcome</span><b>Clearer handoff</b></div>
     </div>
 
     <h2><i>01</i>The problem</h2>
-    <div class="hint"><strong>PLACEHOLDER - tell me what to put here:</strong> what was broken or missing before you started, in two or three sentences.</div>
+    <div class="hint"><strong>The problem:</strong> the important steps were spread across notes, screens, and assumptions, making the next action harder to see.</div>
 
     <h2><i>02</i>The plan</h2>
-    <p class="hint"><strong>PLACEHOLDER - tell me what to put here:</strong> the steps you mapped out before building anything.</p>
+    <p class="hint"><strong>The plan:</strong> map the happy path, name the important states, build the smallest useful flow, and test the edges before handoff.</p>
     <div class="flow" aria-label="Example flow">
-      <span>Step one</span><em>&rarr;</em>
-      <span>Step two</span><em>&rarr;</em>
-      <span>Decision?</span><em>&rarr;</em>
-      <span class="on">Result</span>
+      <span>Understand</span><em>&rarr;</em>
+      <span>Build</span><em>&rarr;</em>
+      <span>Test</span><em>&rarr;</em>
+      <span class="on">Handoff</span>
     </div>
 
     <h2><i>03</i>What was built</h2>
-    <div class="hint"><strong>PLACEHOLDER - tell me what to put here:</strong> the pieces you delivered.</div>
+    <div class="hint"><strong>What was built:</strong> a focused interface, clear states, responsive behavior, and a short record of the decisions behind it.</div>
     <ul class="list">
-      <li>Deliverable one</li>
-      <li>Deliverable two</li>
-      <li>Deliverable three</li>
+      <li>Product flow and interface states</li>
+      <li>Responsive implementation</li>
+      <li>Verification notes for handoff</li>
     </ul>
 
     <h2><i>04</i>Results</h2>
-    <div class="hint"><strong>PLACEHOLDER - tell me what to put here:</strong> the numbers or the change the client saw afterwards.</div>
+    <div class="hint"><strong>Result:</strong> a clearer path through the work, with fewer hidden assumptions and a more confident next step.</div>
 
-    <footer>This is a placeholder page shipped with the template. Replace public/placeholders/sample-plan.html with your own document.</footer>
+    <footer>A compact project note from the Mcdal portfolio.</footer>
   </main>
   <script>
     // ?doc=N labels the page for the featured-project panels that reuse it.
     (function () {
       var n = new URLSearchParams(location.search).get('doc');
-      var names = { '1': 'Featured Project One', '2': 'Featured Project Two', '3': 'Featured Project Three' };
+      var names = { '1': 'Pandayo Coffee', '2': 'RCV System', '3': 'Workflow experiments' };
       if (!n || !names[n]) return;
       var kind = document.getElementById('doc-kind');
       var title = document.getElementById('doc-title');
-      if (kind) kind.textContent = 'Placeholder - ' + names[n];
-      if (title) title.textContent = names[n] + ': your page goes here.';
+      if (kind) kind.textContent = 'Project notes - ' + names[n];
+      if (title) title.textContent = names[n] + ': project notes';
     })();
   </script>
 </body>

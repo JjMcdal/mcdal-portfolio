@@ -351,8 +351,8 @@ export default function Autopilot({ compact = false, maxScale = 1 }: AutopilotPr
           Your workflow, end to end.
         </h2>
         <p className="autopilot__intro">
-          PLACEHOLDER - tell me what to put here: two or three sentences walking
-          through this example automation, from the trigger to each outcome.
+          A small automation can remove a surprising amount of repeated work.
+          This example shows information arriving, being organized, and leaving the workflow ready for a human decision.
         </p>
       </header>
       )}

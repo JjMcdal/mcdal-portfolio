@@ -64,7 +64,7 @@ export default function WorkflowSamples() {
   return (
     <section className="wfs" id="workflow-samples" aria-labelledby="wfs-heading" data-reveal>
       <p className="wfs__caption" id="wfs-heading">
-        PLACEHOLDER - tell me what to put here: one line on what these screenshots show.
+        Screens from workflow experiments, interface studies, and project planning.
       </p>
 
       <div className="wfs__strip">

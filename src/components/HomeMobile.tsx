@@ -47,9 +47,9 @@ export function HomeStats() {
 }
 
 const TILES = [
-  { n: '01', label: 'Projects', to: '/projects', title: 'PLACEHOLDER - projects headline', desc: 'Tell me what to put here.', img: '/placeholders/project-1.jpg' },
-  { n: '02', label: 'Showcase', to: '/showcase', title: 'PLACEHOLDER - your flagship', desc: 'Tell me what to put here.', Icon: Coffee, accent: true },
-  { n: '03', label: 'About', to: '/about', title: `Hi, I'm ${profile.firstName}.`, desc: 'PLACEHOLDER - one line about you.', img: profile.avatarSrc },
+  { n: '01', label: 'Projects', to: '/projects', title: 'Apps, systems, and experiments.', desc: 'Selected work built with care.', img: '/placeholders/project-1.jpg' },
+  { n: '02', label: 'Showcase', to: '/showcase', title: 'A product brought to life.', desc: 'Explore the flagship build.', Icon: Coffee, accent: true },
+  { n: '03', label: 'About', to: '/about', title: `Hi, I'm ${profile.firstName}.`, desc: 'Full-stack engineer from Metro Manila.', img: profile.avatarSrc },
 ] as const
 
 export function HomeExplore() {

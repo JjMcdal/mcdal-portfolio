@@ -93,7 +93,7 @@ const TABS: FlagshipTab[] = [
     pageTitle: 'Home',
     nav: 'announcement',
     caption:
-      'PLACEHOLDER - tell me what to put here: one or two sentences on the first screen people land on in your product and what it tells them at a glance.',
+      'A focused home screen that shows the current state of the work, the next useful actions, and recent updates at a glance.',
     Icon: House,
   },
   {
@@ -103,7 +103,7 @@ const TABS: FlagshipTab[] = [
     pageTitle: 'Board',
     nav: 'desk',
     caption:
-      'PLACEHOLDER - tell me what to put here: one or two sentences on your product\'s main workspace (a board, editor or dashboard) and what people do there every day.',
+      'A shared board for turning ideas into visible tasks, moving work forward, and keeping the next decision clear.',
     Icon: Kanban,
   },
   {
@@ -113,7 +113,7 @@ const TABS: FlagshipTab[] = [
     pageTitle: 'Listings',
     nav: 'work',
     caption:
-      'PLACEHOLDER - tell me what to put here: one or two sentences on a list or feed your product pulls together, where the data comes from and what it saves the user.',
+      'A searchable list that keeps useful records together, with the source and status visible before anyone opens a detail view.',
     Icon: Briefcase,
   },
   {
@@ -123,7 +123,7 @@ const TABS: FlagshipTab[] = [
     pageTitle: 'Features',
     nav: 'tools',
     caption:
-      'PLACEHOLDER - tell me what to put here: one or two sentences on the set of features or tools inside your product, how many there are and which plan they are on.',
+      'A compact toolbox for the repeated actions around a project: upload, organize, transform, and share.',
     Icon: Toolbox,
   },
   {
@@ -133,7 +133,7 @@ const TABS: FlagshipTab[] = [
     pageTitle: 'Search',
     nav: 'desk',
     caption:
-      'PLACEHOLDER - tell me what to put here: one or two sentences on a search or finder feature, what goes in, what comes out and why the results are useful.',
+      'A finder that turns a few filters into a ranked shortlist, so the useful results are easier to compare.',
     Icon: MapPinLine,
   },
 ]
@@ -178,24 +178,24 @@ const UPDATES: Update[] = [
     year: '2026',
     ago: '2 days ago',
     kind: 'New',
-    title: 'PLACEHOLDER - newest update title',
-    text: 'PLACEHOLDER - tell me what to put here: a real changelog entry for your product, what shipped and why it matters to the people using it.',
+    title: 'Clearer project overview',
+    text: 'The home view now puts current work, next actions, and recent updates in one calm starting point.',
   },
   {
     date: 'Jan 3',
     year: '2026',
     ago: '4 days ago',
     kind: 'Improved',
-    title: 'PLACEHOLDER - earlier update title',
-    text: 'PLACEHOLDER - tell me what to put here: an improvement you made to an existing feature and what changed for the user.',
+    title: 'Faster task handoff',
+    text: 'Board cards carry their status and owner together, making the next handoff easier to understand.',
   },
   {
     date: 'Jan 1',
     year: '2026',
     ago: '6 days ago',
     kind: 'New',
-    title: 'PLACEHOLDER - older update title',
-    text: 'PLACEHOLDER - tell me what to put here: another shipped feature, in one or two plain sentences.',
+    title: 'Search that stays useful',
+    text: 'Filters and result context stay visible so people can compare options without losing their place.',
   },
 ]
 
@@ -205,34 +205,34 @@ const BOARD: { name: string; tasks: Task[] }[] = [
   {
     name: 'To do',
     tasks: [
-      { title: 'PLACEHOLDER task one', tag: 'Tag', mine: true },
-      { title: 'PLACEHOLDER task two', tag: 'Tag' },
-      { title: 'PLACEHOLDER task three', tag: 'Tag', mine: true },
-      { title: 'PLACEHOLDER task four', tag: 'Tag' },
+      { title: 'Map the user flow', tag: 'Research', mine: true },
+      { title: 'Review requirements', tag: 'Planning' },
+      { title: 'Prepare test cases', tag: 'QA', mine: true },
+      { title: 'Confirm launch notes', tag: 'Docs' },
     ],
   },
   {
     name: 'In progress',
     tasks: [
-      { title: 'PLACEHOLDER task five', tag: 'Tag' },
-      { title: 'PLACEHOLDER task six', tag: 'Tag', mine: true },
-      { title: 'PLACEHOLDER task seven', tag: 'Tag' },
+      { title: 'Build the first screen', tag: 'Build' },
+      { title: 'Connect the data', tag: 'Backend', mine: true },
+      { title: 'Check empty states', tag: 'QA' },
     ],
   },
   {
     name: 'Review',
     tasks: [
-      { title: 'PLACEHOLDER task eight', tag: 'Tag' },
-      { title: 'PLACEHOLDER task nine', tag: 'Tag' },
-      { title: 'PLACEHOLDER task ten', tag: 'Tag', mine: true },
+      { title: 'Run responsive checks', tag: 'QA' },
+      { title: 'Polish the handoff', tag: 'Review' },
+      { title: 'Verify the happy path', tag: 'QA', mine: true },
     ],
   },
   {
     name: 'Done',
     tasks: [
-      { title: 'PLACEHOLDER task eleven', tag: 'Tag', mine: true },
-      { title: 'PLACEHOLDER task twelve', tag: 'Tag' },
-      { title: 'PLACEHOLDER task thirteen', tag: 'Tag' },
+      { title: 'Ship the tested build', tag: 'Release', mine: true },
+      { title: 'Document the decisions', tag: 'Docs' },
+      { title: 'Review the next step', tag: 'Planning' },
     ],
   },
 ]
@@ -240,16 +240,16 @@ const BOARD: { name: string; tasks: Task[] }[] = [
 type Tool = { name: string; note: string; Icon: Icon; pro?: boolean }
 
 const TOOLS: Tool[] = [
-  { name: 'Feature one', note: 'Short description', Icon: FileArrowUp },
-  { name: 'Feature two', note: 'Short description', Icon: ImageSquare },
-  { name: 'Feature three', note: 'Short description', Icon: FilePdf },
-  { name: 'Feature four', note: 'Short description', Icon: TextAa },
-  { name: 'Feature five', note: 'Short description', Icon: QrCode },
-  { name: 'Feature six', note: 'Short description', Icon: Scissors },
-  { name: 'Feature seven', note: 'Short description', Icon: ArrowsOutSimple },
-  { name: 'Feature eight', note: 'Short description', Icon: Microphone },
-  { name: 'Feature nine', note: 'Short description', Icon: ClosedCaptioning, pro: true },
-  { name: 'Feature ten', note: 'Short description', Icon: MagicWand },
+  { name: 'Upload files', note: 'Bring source material into the workspace', Icon: FileArrowUp },
+  { name: 'Visual review', note: 'Keep important details easy to inspect', Icon: ImageSquare },
+  { name: 'Export reports', note: 'Share a clear record of the work', Icon: FilePdf },
+  { name: 'Write notes', note: 'Capture decisions while they are fresh', Icon: TextAa },
+  { name: 'Generate codes', note: 'Create scannable handoff details', Icon: QrCode },
+  { name: 'Trim content', note: 'Remove noise from the final result', Icon: Scissors },
+  { name: 'Expand views', note: 'Give complex work room to breathe', Icon: ArrowsOutSimple },
+  { name: 'Record context', note: 'Leave a useful voice note for the team', Icon: Microphone },
+  { name: 'Add captions', note: 'Make shared media easier to follow', Icon: ClosedCaptioning, pro: true },
+  { name: 'Polish output', note: 'Finish the details before handoff', Icon: MagicWand },
 ]
 
 const TOOL_FILTERS = ['All 10', 'Group A', 'Group B', 'Group C', 'Group D', 'Group E']
@@ -265,11 +265,11 @@ type Job = {
 }
 
 const JOBS: Job[] = [
-  { source: 'Src A', tone: 'olj', title: 'PLACEHOLDER listing one', rate: 'Detail', posted: '2h ago', state: 'Applied' },
-  { source: 'Src B', tone: 'linkedin', title: 'PLACEHOLDER listing two', rate: 'Detail', posted: '5h ago', state: 'Saved' },
-  { source: 'Src C', tone: 'jobstreet', title: 'PLACEHOLDER listing three', rate: 'Detail', posted: '6h ago', state: 'New' },
-  { source: 'Src A', tone: 'olj', title: 'PLACEHOLDER listing four', rate: 'Detail', posted: '9h ago', state: 'Saved' },
-  { source: 'Src B', tone: 'linkedin', title: 'PLACEHOLDER listing five', rate: 'Detail', posted: '1d ago', state: 'New' },
+  { source: 'GitHub', tone: 'olj', title: 'Frontend Engineer · React and TypeScript', rate: 'Remote', posted: '2h ago', state: 'Applied' },
+  { source: 'LinkedIn', tone: 'linkedin', title: 'QA Automation Intern', rate: 'Hybrid', posted: '5h ago', state: 'Saved' },
+  { source: 'JobStreet', tone: 'jobstreet', title: 'Full-stack Developer · Next.js', rate: 'Metro Manila', posted: '6h ago', state: 'New' },
+  { source: 'GitHub', tone: 'olj', title: 'Product Engineer · Internal Tools', rate: 'Remote', posted: '9h ago', state: 'Saved' },
+  { source: 'LinkedIn', tone: 'linkedin', title: 'Software Tester · Web Applications', rate: 'Hybrid', posted: '1d ago', state: 'New' },
 ]
 
 type Lead = {
@@ -282,11 +282,11 @@ type Lead = {
 }
 
 const LEADS: Lead[] = [
-  { name: 'PLACEHOLDER result one', place: 'Location', rating: '4.8', reviews: '212', score: 91, angle: 'Tag' },
-  { name: 'PLACEHOLDER result two', place: 'Location', rating: '4.6', reviews: '148', score: 84, angle: 'Tag' },
-  { name: 'PLACEHOLDER result three', place: 'Location', rating: '4.4', reviews: '96', score: 72, angle: 'Tag' },
-  { name: 'PLACEHOLDER result four', place: 'Location', rating: '4.9', reviews: '61', score: 65, angle: 'Tag' },
-  { name: 'PLACEHOLDER result five', place: 'Location', rating: '4.2', reviews: '44', score: 58, angle: 'Tag' },
+  { name: 'Pandayo Coffee', place: 'Cebu City', rating: '4.8', reviews: '212', score: 91, angle: 'POS' },
+  { name: 'RCV System', place: 'Quezon City', rating: '4.6', reviews: '148', score: 84, angle: 'Compliance' },
+  { name: 'QA Helper', place: 'Metro Manila', rating: '4.4', reviews: '96', score: 72, angle: 'Testing' },
+  { name: 'Workflow Capture', place: 'Remote', rating: '4.9', reviews: '61', score: 65, angle: 'Research' },
+  { name: 'Portfolio build', place: 'Metro Manila', rating: '4.2', reviews: '44', score: 58, angle: 'Showcase' },
 ]
 
 /* ---- The app shell. Every slide renders inside this, so switching tabs
@@ -412,7 +412,7 @@ function AnnouncementMock() {
       <PageHead
         kicker="Monday, January 5"
         title="Good morning, User."
-        sub="PLACEHOLDER status line."
+        sub="Your next clear step is ready."
       />
 
       <div className="flagship__card" style={{ ['--i' as string]: 3 }}>
@@ -423,7 +423,7 @@ function AnnouncementMock() {
         <div className="flagship__card-body">
           <CheckCircle weight="fill" size="1.15em" className="flagship__ok" />
           <span>
-            PLACEHOLDER - the main status message your dashboard shows.
+            Nothing is blocked. Keep the useful work moving.
           </span>
         </div>
         <div className="flagship__card-foot">
@@ -475,8 +475,8 @@ function DeskMock() {
     <>
       <PageHead
         kicker="Monday, January 5"
-        title="PLACEHOLDER board heading."
-        sub="PLACEHOLDER - one line on what this board holds."
+        title="Build board"
+        sub="A simple view of what needs attention next."
       />
       <div className="flagship__board">
         {BOARD.map((col, i) => (
@@ -518,8 +518,8 @@ function ToolsMock() {
     <>
       <PageHead
         kicker="Features"
-        title="PLACEHOLDER features heading."
-        sub="PLACEHOLDER - one line on what the features have in common."
+        title="Useful tools"
+        sub="Small actions that keep a project moving."
       />
       <div className="flagship__filters" style={{ ['--i' as string]: 3 }}>
         {TOOL_FILTERS.map((f, i) => (
@@ -556,8 +556,8 @@ function JobsMock() {
     <>
       <PageHead
         kicker="Listings"
-        title="PLACEHOLDER listings heading."
-        sub="PLACEHOLDER - one line on where these listings come from."
+        title="Opportunities"
+        sub="A focused list of roles and project leads worth a closer look."
       />
       <div className="flagship__filters" style={{ ['--i' as string]: 3 }}>
         {['All sources', 'Source A', 'Source B', 'Source C'].map((f, i) => (
@@ -604,11 +604,11 @@ function LeadsMock() {
       <div className="flagship__leadbar" style={{ ['--i' as string]: 2 }}>
         <span className="flagship__field">
           <span className="flagship__field-label">Category</span>
-          <span className="flagship__field-value">PLACEHOLDER</span>
+          <span className="flagship__field-value">Full-stack work</span>
         </span>
         <span className="flagship__field">
           <span className="flagship__field-label">Location</span>
-          <span className="flagship__field-value">PLACEHOLDER</span>
+          <span className="flagship__field-value">Metro Manila</span>
         </span>
         <span className="flagship__leadgo">
           <MapPinLine weight="fill" size="0.95em" />
@@ -651,7 +651,7 @@ function LeadsMock() {
       </div>
 
       <span className="flagship__foot" style={{ ['--i' as string]: 9 }}>
-        PLACEHOLDER - one line explaining how the score is worked out.
+        Results are ranked by fit, clarity, and the information available.
       </span>
     </>
   )
@@ -676,51 +676,51 @@ type Feedback = {
 /* Use real quotes only, kept verbatim, with the person's permission. */
 const FEEDBACKS: Feedback[] = [
   {
-    name: 'Client Name',
+    name: 'Portfolio note',
     date: 'Jan 5, 2026',
     rating: 5,
-    context: 'PLACEHOLDER',
+    context: 'Build note',
     quote:
-      'PLACEHOLDER - tell me what to put here: a real quote from someone who used your product, word for word, two to four sentences on what it did for them.',
+      'This showcase is a product concept for exploring interface decisions, workflow states, and responsive behavior.',
   },
   {
-    name: 'Client Name',
+    name: 'Portfolio note',
     date: 'Jan 4, 2026',
     rating: 5,
-    context: 'PLACEHOLDER',
+    context: 'Build note',
     quote:
-      'PLACEHOLDER - tell me what to put here: a real quote about a specific feature or result, with a number if they gave one.',
+      'The mock keeps the important context close to each action so the interface can be scanned quickly.',
   },
   {
-    name: 'Client Name',
+    name: 'Portfolio note',
     date: 'Jan 3, 2026',
     rating: 5,
-    context: 'PLACEHOLDER',
+    context: 'Build note',
     quote:
-      'PLACEHOLDER - tell me what to put here: a short real quote, one sentence is fine.',
+      'Every screen is designed to show a useful next step, not just fill space.',
   },
   {
-    name: 'Client Name',
+    name: 'Portfolio note',
     date: 'Jan 2, 2026',
     rating: 5,
-    context: 'PLACEHOLDER',
+    context: 'Build note',
     quote:
-      'PLACEHOLDER - tell me what to put here: a real quote about working with you or the support you gave, not just the product.',
+      'The visual language is deliberately calm: clear hierarchy, visible states, and restrained motion.',
   },
   {
-    name: 'Client Name',
+    name: 'Portfolio note',
     date: 'Jan 1, 2026',
     rating: 4,
-    context: 'PLACEHOLDER',
-    quote: 'PLACEHOLDER - tell me what to put here: a one-line quote.',
+    context: 'Build note',
+    quote: 'Built to make the work easier to understand before it gets complicated.',
   },
   {
-    name: 'Client Name',
+    name: 'Portfolio note',
     date: 'Dec 31, 2025',
     rating: 5,
-    context: 'PLACEHOLDER',
+    context: 'Build note',
     quote:
-      'PLACEHOLDER - tell me what to put here: a real quote from a community member or early user, two sentences.',
+      'This is a living interface study, not a client testimonial wall. The work above shows the thinking in context.',
   },
 ]
 
@@ -787,12 +787,11 @@ export default function Flagship({ eyebrow = '12 / Flagship build' }: FlagshipPr
       <header className="flagship__header">
         <span className="flagship__eyebrow">{eyebrow}</span>
         <h3 className="flagship__title" id="flagship-heading">
-          Product Name
+          Workflow Desk
         </h3>
         <p className="flagship__desc">
-          PLACEHOLDER - tell me what to put here: two to four sentences on your flagship
-          product - who it is for, the main things it does, and one detail on how you
-          built or run it (stack, hosting, how many people use it).
+          Workflow Desk is a product concept for organizing projects, records, and repeatable work.
+          I use it to explore clear information architecture, useful states, and responsive interaction patterns.
         </p>
         <a className="flagship__cta" href="#">
           Open product
@@ -870,7 +869,7 @@ export default function Flagship({ eyebrow = '12 / Flagship build' }: FlagshipPr
         <header className="flagship__feedback-header">
           <span className="flagship__feedback-eyebrow">What people say about it</span>
           <h4 className="flagship__feedback-title" id="flagship-feedback-heading">
-            Your testimonials heading.
+            Build notes from the showcase.
           </h4>
           <button
             type="button"

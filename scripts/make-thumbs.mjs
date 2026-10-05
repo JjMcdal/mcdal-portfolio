@@ -39,7 +39,7 @@ for (const { dir, w, h } of SETS) {
   }
 }
 
-// Generic placeholder images: a labelled card at the size of the image it replaces.
+// Generic project-study images for work that does not yet have a final screenshot.
 const CARDS = [
   ['project-1.jpg', 1200, 820, 'Project screenshot 1'],
   ['project-2.jpg', 1200, 820, 'Project screenshot 2'],
@@ -58,9 +58,9 @@ const card = (label, w, h) => `<!doctype html><html><body style="margin:0">
 <div style="width:${w}px;height:${h}px;display:grid;place-items:center;font-family:system-ui,sans-serif;
 background:repeating-linear-gradient(135deg,#E8ECF2 0 18px,#DDE3EB 18px 36px);color:#475569;text-align:center">
 <div style="background:#F8FAFC;border:2px dashed #94A3B8;border-radius:${Math.round(w / 40)}px;padding:${Math.round(w / 30)}px ${Math.round(w / 20)}px">
-<div style="font-weight:800;letter-spacing:.14em;font-size:${Math.round(w / 34)}px;color:#FF7A1A">PLACEHOLDER</div>
+<div style="font-weight:800;letter-spacing:.14em;font-size:${Math.round(w / 34)}px;color:#FF7A1A">MCDAL BUILD</div>
 <div style="font-weight:700;font-size:${Math.round(w / 28)}px;margin-top:8px;color:#0F172A">${label}</div>
-<div style="font-size:${Math.round(w / 48)}px;margin-top:8px">Tell me what to put here</div>
+<div style="font-size:${Math.round(w / 48)}px;margin-top:8px">Interface study in progress</div>
 </div></div></body></html>`
 for (const [name, w, h, label] of CARDS) {
   const page = await browser.newPage({ viewport: { width: w, height: h } })

@@ -20,16 +20,16 @@ export type Funnel = {
 
 const funnel = (n: string, tag: FunnelTag): Funnel => ({
   file: `placeholder-funnel-${n}.html`,
-  label: `Placeholder Funnel ${n}`,
+  label: `Lead flow study ${n}`,
   tag,
-  desc: 'PLACEHOLDER - tell me what to put here: who this page was for and what it does.',
+  desc: 'A landing-page study focused on clear messaging, a focused action, and a short path to contact.',
 })
 
 const site = (n: string): Funnel => ({
   file: `placeholder-site-${n}.html`,
-  label: `Placeholder Website ${n}`,
+  label: `Website study ${n}`,
   tag: 'Website',
-  desc: 'PLACEHOLDER - tell me what to put here: the client, the industry, and what the site had to do.',
+  desc: 'A visual website study exploring hierarchy, responsive layouts, and useful calls to action.',
   dir: 'samples',
 })
 

@@ -52,29 +52,29 @@ const page = ({ title, kind, n, p, body }) => `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${title}</title><style>${css(p)}</style></head>
 <body><div class="wrap">
-<nav><span class="logo">Placeholder<b>.</b></span>
-<span class="links"><a href="#">PLACEHOLDER</a><a href="#">PLACEHOLDER</a><a href="#">PLACEHOLDER</a></span>
-<a class="btn" href="#">PLACEHOLDER</a></nav>
+<nav><span class="logo">Mcdal<b>.</b></span>
+<span class="links"><a href="#">Overview</a><a href="#">Details</a><a href="#">Contact</a></span>
+<a class="btn" href="#">Start a conversation</a></nav>
 ${body}
-<footer><span>&copy; PLACEHOLDER ${kind} ${n}</span><span>Replace this file: public/${kind === 'Website' ? 'samples' : 'funnels'}/</span></footer>
+<footer><span>&copy; Mcdal ${kind} study ${n}</span><span>Portfolio interface study</span></footer>
 </div></body></html>`
 
 const hero = (kind, n, p, extra = '') => `
 <section class="hero"><div>
-<span class="tag">PLACEHOLDER ${kind} ${n}</span>
-<h1>Tell me what to put here.</h1>
-<p class="lede">PLACEHOLDER - swap this page for a ${kind.toLowerCase()} you built. One line on who it was for and what it does.</p>
-<a class="btn" href="#">PLACEHOLDER CTA</a> <a class="btn btn--ghost" href="#">Secondary</a>
-</div>${extra || `<div class="shot"><div><strong>PLACEHOLDER IMAGE</strong>Your hero photo or product shot</div></div>`}</section>`
+<span class="tag">${kind} study ${n}</span>
+<h1>Clear paths make useful products.</h1>
+<p class="lede">A ${kind.toLowerCase()} interface study focused on hierarchy, responsive behavior, and a direct path to action.</p>
+<a class="btn" href="#">View the flow</a> <a class="btn btn--ghost" href="#">See details</a>
+</div>${extra || `<div class="shot"><div><strong>INTERFACE STUDY</strong>Responsive product direction</div></div>`}</section>`
 
 const cards = () => `<div class="row">${[1, 2, 3]
-  .map((i) => `<div class="card"><div class="n">0${i}</div><h3>PLACEHOLDER</h3><p>Tell me what to put here - a benefit, a step, or a feature.</p></div>`)
+  .map((i) => `<div class="card"><div class="n">0${i}</div><h3>${['Clear hierarchy', 'Focused action', 'Responsive detail'][i - 1]}</h3><p>Designed to make the next useful step easier to see and take.</p></div>`)
   .join('')}</div>`
 
-const band = () => `<div class="band"><div><p class="quote">"PLACEHOLDER - a short testimonial from the client this page was built for."</p>
-<p class="who">PLACEHOLDER NAME, PLACEHOLDER COMPANY</p></div><a class="btn" href="#">PLACEHOLDER</a></div>`
+const band = () => `<div class="band"><div><p class="quote">"A calm interface gives people room to make the right decision."</p>
+<p class="who">Portfolio build note</p></div><a class="btn" href="#">Discuss a project</a></div>`
 
-const form = () => `<div class="form"><strong>PLACEHOLDER FORM</strong>
+const form = () => `<div class="form"><strong>Project enquiry</strong>
 <div class="field">Name</div><div class="field">Email</div><div class="field">Phone</div><a class="btn" href="#">Submit</a></div>`
 
 const root = join(process.cwd(), 'public')
@@ -87,12 +87,12 @@ for (let i = 1; i <= FUNNELS; i++) {
   const n = String(i).padStart(2, '0')
   const p = PALETTES[(i - 1) % PALETTES.length]
   const body = hero('Funnel', n, p, i % 2 ? form() : '') + cards()
-  writeFileSync(join(root, 'funnels', `placeholder-funnel-${n}.html`), page({ title: `Placeholder Funnel ${n}`, kind: 'Funnel', n, p, body }))
+  writeFileSync(join(root, 'funnels', `placeholder-funnel-${n}.html`), page({ title: `Funnel Study ${n}`, kind: 'Funnel', n, p, body }))
 }
 for (let i = 1; i <= SITES; i++) {
   const n = String(i).padStart(2, '0')
   const p = PALETTES[(i + 2) % PALETTES.length]
   const body = hero('Website', n, p) + cards() + band()
-  writeFileSync(join(root, 'samples', `placeholder-site-${n}.html`), page({ title: `Placeholder Website ${n}`, kind: 'Website', n, p, body }))
+  writeFileSync(join(root, 'samples', `placeholder-site-${n}.html`), page({ title: `Website Study ${n}`, kind: 'Website', n, p, body }))
 }
 console.log(`wrote ${FUNNELS} funnels + ${SITES} websites`)
