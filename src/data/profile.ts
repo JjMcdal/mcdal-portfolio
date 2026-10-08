@@ -70,6 +70,6 @@ export const profile: Profile = {
   },
   socials: [
     { label: 'GitHub profile', href: 'https://github.com/JjMcdal', iconPath: '/icons/github.svg' },
-    { label: 'LinkedIn profile', href: '#', iconPath: '/icons/linkedin.svg' },
+    { label: 'LinkedIn profile', href: 'https://www.linkedin.com/in/jj-mcdal-nabong-64bba7397', iconPath: '/icons/linkedin.svg' },
   ],
 }
