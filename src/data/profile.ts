@@ -52,7 +52,7 @@ export const profile: Profile = {
   role: 'Full-Stack Engineer',
   avatarSrc: '/avatar.svg',
   verifiedLabel: 'ISTQB Foundation Level certified',
-  email: 'jjmcdal@gmail.com',
+  email: 'jjmcdalnabong2001@gmail.com',
   location: 'Metro Manila, Philippines',
   // Pick any icon from https://phosphoricons.com and import it above.
   stats: [
