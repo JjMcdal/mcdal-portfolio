@@ -12,9 +12,14 @@ import { profile } from '@/data/profile'
  *   2. Have it answer 2xx on success, or a non-2xx with { "error": "..." }
  *      and that sentence is shown to the visitor as-is.
  * With the variable unset the mail client path below is used instead.
+ *
+ * Web3Forms: set VITE_WEB3FORMS_KEY in .env (local) and in the Vercel
+ * environment variables (live). It takes priority over the other paths.
  */
 
 export const ENDPOINT: string = import.meta.env.VITE_CONTACT_ENDPOINT ?? ''
+const WEB3FORMS_KEY: string = import.meta.env.VITE_WEB3FORMS_KEY ?? ''
+const WEB3FORMS_URL = 'https://api.web3forms.com/submit'
 export const RECIPIENT = profile.email
 
 export const MAX_NAME = 80
@@ -35,6 +40,11 @@ export function sanitize(input: string, allowNewlines = false): string {
 
 export const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
+/** Name of the hidden honeypot input. Must match the input in ContactGrid.tsx.
+ *  Not "website": browsers autofill that, which tripped the trap for real
+ *  visitors and silently dropped their messages. */
+export const HONEYPOT_FIELD = 'hp_field'
+
 export type Lead = {
   firstName: string
   lastName: string
@@ -54,13 +64,39 @@ export function readLead(data: FormData): Lead | null {
   const email = sanitize(String(data.get('email') ?? '').trim()).slice(0, MAX_EMAIL)
   const message = sanitize(String(data.get('message') ?? '').trim(), true).slice(0, MAX_MESSAGE)
   if (!firstName || !lastName || !email || !message || !EMAIL_RE.test(email)) return null
-  const website = String(data.get('website') ?? '')
+  const website = String(data.get(HONEYPOT_FIELD) ?? '')
   return { firstName, lastName, email, message, website }
 }
 
 export class SubmitError extends Error {}
 
 export async function submitLead(lead: Lead): Promise<SubmitResult> {
+  if (WEB3FORMS_KEY) {
+    // Honeypot: a person never fills this. Pretend success, send nothing.
+    if (lead.website) {
+      if (import.meta.env.DEV) console.warn('Contact honeypot was filled, message not sent.')
+      return { via: 'webhook' }
+    }
+
+    const res = await fetch(WEB3FORMS_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        subject: `Portfolio inquiry from ${lead.firstName} ${lead.lastName}`,
+        from_name: `${lead.firstName} ${lead.lastName}`,
+        name: `${lead.firstName} ${lead.lastName}`,
+        email: lead.email,
+        message: lead.message,
+      }),
+    })
+    const data = await res.json().catch(() => null)
+    if (!res.ok || !data?.success) {
+      throw new SubmitError(data?.message || 'That did not go through. Email me directly instead.')
+    }
+    return { via: 'webhook' }
+  }
+
   if (ENDPOINT) {
     const res = await fetch(ENDPOINT, {
       method: 'POST',
@@ -75,7 +111,12 @@ export async function submitLead(lead: Lead): Promise<SubmitResult> {
   }
 
   const subject = `Project inquiry from ${lead.firstName} ${lead.lastName}`
-  const body = [`Name: ${lead.firstName} ${lead.lastName}`, `Email: ${lead.email}`, '', lead.message].join('\n')
+  const body = [
+    `Name: ${lead.firstName} ${lead.lastName}`,
+    `Email: ${lead.email}`,
+    '',
+    lead.message,
+  ].join('\n')
   // encodeURIComponent on every value blocks header injection (CR/LF) and
   // parameter smuggling via & or ?.
   window.location.href = `mailto:${encodeURIComponent(RECIPIENT)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
