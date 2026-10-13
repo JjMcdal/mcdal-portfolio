@@ -34,6 +34,7 @@ import './styles/about-grid.css'
 import './styles/contact-grid.css'
 import './styles/boot.css'
 import './styles/credentials.css'
+import './styles/github-contributions.css'
 import './styles/mobile-app.css'
 import './styles/a11y.css'
 // Apple design pass - an overlay on everything above; perf.css still wins.

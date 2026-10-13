@@ -1,10 +1,13 @@
 import ProjectsGrid from '@/components/ProjectsGrid'
+import GitHubContributions from '@/components/GitHubContributions'
 
-/**
- * Projects is a fixed viewport like Home: six cards, one per body of work,
- * each opening the real section in a dialog. No ViewShell - there is no
- * scrolling stack here and the reveal hooks would have nothing to reveal.
- */
 export default function ProjectsView() {
-  return <ProjectsGrid />
+  return (
+    <div style={{ height: '100%', overflowY: 'auto' }}>
+      <ProjectsGrid />
+      <div style={{ padding: '0 calc(clamp(1rem, 3.5vw, 3rem) + 5px) 3rem', marginTop: '-3rem' }}>
+        <GitHubContributions username="JjMcdal" palette="forest" />
+      </div>
+    </div>
+  )
 }

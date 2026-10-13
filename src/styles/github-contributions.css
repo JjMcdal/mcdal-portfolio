@@ -1,0 +1,133 @@
+/* Uses the site's tokens when available, with black-and-white fallbacks */
+.ghc {
+  --ghc-bg: var(--card, #0a0a0a);
+  --ghc-border: var(--border, #262626);
+  --ghc-text: var(--foreground, #fafafa);
+  --ghc-muted: var(--muted-foreground, #8a8a8a);
+  --cell: 11px;
+  --gap: 2px;
+  padding: 4rem 0;
+}
+
+/* ---- Palettes: level 0 (no contributions) -> level 4 (most contributions) ---- */
+.ghc[data-palette="forest"] { --l0:#161a17; --l1:#1d3a29; --l2:#2a6b45; --l3:#3a9460; --l4:#63c78f; }
+.ghc[data-palette="sage"]   { --l0:#181a18; --l1:#38432f; --l2:#667a58; --l3:#93ac82; --l4:#c2d9b4; }
+.ghc[data-palette="silver"] { --l0:#171717; --l1:#3a3a3a; --l2:#6a6a6a; --l3:#a3a3a3; --l4:#ececec; }
+.ghc[data-palette="tan"]    { --l0:#1a1816; --l1:#47362a; --l2:#7a5d40; --l3:#ab8156; --l4:#d9b385; }
+.ghc[data-palette="navy"]   { --l0:#13151c; --l1:#1b2a5e; --l2:#2a43a3; --l3:#4a68d8; --l4:#8ea6ff; }
+
+.ghc-card {
+  background: var(--ghc-bg);
+  border: 1px solid var(--ghc-border);
+  border-radius: 32px;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  color: var(--ghc-text);
+}
+
+.ghc-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.ghc-title { display: flex; align-items: center; gap: 1rem; }
+.ghc-eyebrow { color: var(--ghc-muted); font-size: 0.95rem; font-weight: 500; margin: 0; }
+.ghc-title h3 { font-size: clamp(1.3rem, 2.6vw, 1.9rem); font-weight: 700; letter-spacing: -0.02em; margin: 0; }
+
+.ghc-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem; }
+
+.ghc-tabs {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.3rem;
+  border: 1px solid var(--ghc-border);
+  border-radius: 999px;
+}
+
+.ghc-tabs button {
+  background: none;
+  border: 0;
+  color: var(--ghc-muted);
+  font: inherit;
+  font-weight: 500;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.ghc-tabs button:hover { color: var(--ghc-text); }
+.ghc-tabs button.active { background: var(--ghc-text); color: var(--ghc-bg); }
+.ghc-tabs button:focus-visible,
+.ghc-profile:focus-visible { outline: 2px solid var(--l3); outline-offset: 2px; }
+
+.ghc-profile { color: var(--ghc-text); font-weight: 500; text-decoration: none; }
+.ghc-profile:hover { color: var(--l4); }
+
+.ghc-msg { color: var(--ghc-muted); padding: 3rem 0; text-align: center; }
+.ghc-msg a { color: var(--l4); }
+
+/* ---- Heatmap ---- */
+.ghc-scroll { overflow-x: auto; padding-bottom: 0.5rem; }
+.ghc-grid-wrap { width: max-content; margin: 0 auto; }
+
+.ghc-months {
+  display: grid;
+  column-gap: var(--gap);
+  margin-left: 2.75rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--ghc-muted);
+}
+.ghc-months span { white-space: nowrap; }
+
+.ghc-body { display: flex; gap: 0.5rem; }
+
+.ghc-days {
+  display: grid;
+  grid-template-rows: repeat(7, var(--cell));
+  row-gap: var(--gap);
+  width: 2.25rem;
+  font-size: 0.8rem;
+  color: var(--ghc-muted);
+}
+.ghc-days span { grid-row: span 1; line-height: var(--cell); }
+.ghc-days span:nth-child(1) { grid-row: 2; }
+.ghc-days span:nth-child(2) { grid-row: 4; }
+.ghc-days span:nth-child(3) { grid-row: 6; }
+
+.ghc-grid { display: flex; gap: var(--gap); }
+.ghc-col { display: flex; flex-direction: column; gap: var(--gap); }
+
+.ghc-cell {
+  width: var(--cell);
+  height: var(--cell);
+  border-radius: 3px;
+  background: var(--l0);
+  display: inline-block;
+}
+.ghc-cell[data-level="1"] { background: var(--l1); }
+.ghc-cell[data-level="2"] { background: var(--l2); }
+.ghc-cell[data-level="3"] { background: var(--l3); }
+.ghc-cell[data-level="4"] { background: var(--l4); }
+.ghc-blank { background: transparent !important; }
+
+.ghc-legend {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--ghc-muted);
+}
+.ghc-legend span:first-child { margin-right: 0.3rem; }
+.ghc-legend span:last-child { margin-left: 0.3rem; }
+
+@media (max-width: 640px) {
+  .ghc { --cell: 11px; --gap: 2px; }
+  .ghc-grid-wrap { margin: 0; }
+}
