@@ -443,43 +443,6 @@ main > * {
 }
 
 /* ============================================
-   CURSOR RING
-   One lagged ring trailing the native cursor
-   (which stays visible - see CursorRing.tsx).
-   White + difference blend reads near-black on
-   the cream shader and near-white on navy-ink,
-   so one element works on every surface.
-   ============================================ */
-.cursor-ring {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 36px;
-  height: 36px;
-  display: grid;
-  place-items: center;
-  border: 1.5px solid var(--white);
-  border-radius: var(--radius-circle);
-  background: transparent;
-  mix-blend-mode: difference;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0;
-  will-change: transform;
-}
-.cursor-ring__label {
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  /* Raw #000 is correct here, not a palette violation: it is a blend-math
-     operand. Under difference, black-on-white-disc inverts to light text
-     on a dark disc over cream, dark text on a light disc over navy-ink. */
-  color: #000;
-  opacity: 0;
-}
-
-/* ============================================
    SCROLL REVEAL
    Sections start hidden and slide up into
    view as they enter the viewport.

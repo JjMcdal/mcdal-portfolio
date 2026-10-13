@@ -4,7 +4,6 @@ import TabBar from '@/components/TabBar'
 import QuickMenu from '@/components/QuickMenu'
 import Rail from '@/components/Rail'
 import IntroOverlay from '@/components/IntroOverlay'
-import CursorRing from '@/components/CursorRing'
 import AccessMenu from '@/components/AccessMenu'
 import { motionReduced } from '@/lib/a11y'
 import { useLenis, SCROLLER_ID } from '@/hooks/useLenis'
@@ -95,7 +94,6 @@ export default function App() {
   return (
     <>
       <IntroOverlay />
-      <CursorRing />
       <a href={`#${SCROLLER_ID}`} className="skip-link">Skip to main content</a>
       {shouldLoadCanvas && perfTier !== 'low' && (
         <Suspense fallback={null}>
